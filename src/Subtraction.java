@@ -5,11 +5,11 @@ public class Subtraction {
         String onesCompSecondNum;
         if (secondNum > 0) {
             onesCompSecondNum = OnesComplement.onesComplement(secondNum*-1);
-            String result = Addition.addOnesComplement(onesCompFirstNum, onesCompSecondNum);
+            String result = Addition.addWithOverflow(onesCompFirstNum, onesCompSecondNum);
             return  result.replace('0', '2').replace('1', '0').replace('2', '1');
         } else {
             onesCompSecondNum = OnesComplement.onesComplement(secondNum);
-            String result = Addition.addOnesComplement(onesCompFirstNum, onesCompSecondNum);
+            String result = Addition.addWithOverflow(onesCompFirstNum, onesCompSecondNum);
             return  result.replace('0', '2').replace('1', '0').replace('2', '1');
         }
     }
@@ -19,16 +19,14 @@ public class Subtraction {
         String twosCompSecondNum;
         if (secondNum > 0) {
             twosCompSecondNum = TwosComplement.twosComplement(secondNum*-1);
-            String result = Addition.addTwosComplement(twosCompFirstNum, twosCompSecondNum);
-            System.out.println(twosCompFirstNum);
-            System.out.println(twosCompSecondNum);
-            return  result.replace('0', '2').replace('1', '0').replace('2', '1');
+            String result = Addition.add(twosCompFirstNum, twosCompSecondNum);
+            result = result.replace('0', '2').replace('1', '0').replace('2', '1');
+            return Addition.addOne(result);
         } else {
             twosCompSecondNum = TwosComplement.twosComplement(secondNum);
-            String result = Addition.addTwosComplement(twosCompFirstNum, twosCompSecondNum);
-            System.out.println(twosCompFirstNum);
-            System.out.println(twosCompSecondNum);
-            return  result.replace('0', '2').replace('1', '0').replace('2', '1');
+            String result = Addition.add(twosCompFirstNum, twosCompSecondNum);
+            result = result.replace('0', '2').replace('1', '0').replace('2', '1');
+            return Addition.addOne(result);
         }
     }
 

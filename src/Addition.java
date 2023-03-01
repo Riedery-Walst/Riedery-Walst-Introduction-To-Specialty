@@ -1,5 +1,5 @@
 public class Addition {
-    static public String addOnesComplement(String firstNum, String secondNum) {
+    static public String addWithOverflow(String firstNum, String secondNum) {
         // initialize the ith index
         int i = firstNum.length() - 1;
         // initialize the jth index
@@ -29,7 +29,7 @@ public class Addition {
     }
 
 
-        static public String addTwosComplement(String firstNum, String secondNum) {
+        static public String add(String firstNum, String secondNum) {
             // initialize the ith index
             int i = firstNum.length() - 1;
             // initialize the jth index
@@ -75,4 +75,7 @@ public class Addition {
         }
         return result.reverse().toString();
     }
+
+
+
 }
